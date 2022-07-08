@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Cart from './components/cart';
+
+import { Provider } from 'react-redux';
+import Store from './store';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const StoreInstance = Store();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={StoreInstance}>
+      <App />
+      <Cart />
+    </Provider>
   </React.StrictMode>
 );
 
