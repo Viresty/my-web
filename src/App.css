@@ -1,10 +1,88 @@
+body {
+  background-color: #282c34c4;
+  color: white;
+  letter-spacing: normal;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  /* font-family: 'Saira Condensed', sans-serif; */
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  padding: 1em;
+  display: flex;
+  max-width: 1320px;
+  height: fit-content;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Ipad ngang(1024 x 768)*/
+@media screen and (max-width: 1024px){
+  .content {
+    max-width: 1140px;
+  }
+}
+/*Ipad dọc(768 x 1024)*/
+@media screen and (max-width: 768px){
+  .content {
+    max-width: 100%;
+  }
+}
+/*Tablet nhỏ(480 x 640)*/
+@media screen and (max-width: 480px){
+  .content {
+    max-width: 100%;
+  }
+}
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 320px){
+  .content {
+    max-width: 100%;
+  }
+}
+/*Smart phone nhỏ*/
+@media screen and (max-width: 240px){
+  .content {
+    max-width: 100%;
+  }
+}
+
+a, a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: greenyellow;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 5vmin;
   pointer-events: none;
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,20 +91,9 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +102,67 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#header-container {
+  position: fixed;
+  width: 100%;
+  background-color: #282c34;
+  z-index: 10;
+}
+
+#header-content {
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  height: 8em;
+  min-width: 1320px;
+}
+
+.header {
+  position: relative;
+  max-width: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > ul {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: end;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.header > ul li {
+  font-weight: bolder;
+  margin: auto 2em;
+  color: white;
+}
+
+#body-container {
+  padding-top: 10em;
+  flex-direction: column;
+}
+
+.list-card > ul {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1em;
+  gap: 1em;
+  list-style-type: none;
+}
+
+.list-card > ul > li {
+  width: fit-content;
+}
+
+.card img {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
 }
