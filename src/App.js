@@ -6,6 +6,7 @@ import {useEffect} from 'react';
 import Home from './pages/home';
 import Login from './pages/login';
 import Library from './pages/library';
+import Play from './pages/play';
 
 import Header from './components/header';
   
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/play" element={<Play />} />
         </Routes>
       </Router>
   );

@@ -32,6 +32,16 @@ body {
   flex-direction: column;
 }
 
+.content-title {
+  text-align: center;
+  font-size: calc(2rem + 1vw);
+}
+
+.content-detail {
+  text-align: center;
+  font-size: calc(0.5rem + 1vw);
+}
+
 /*Ipad ngang(1024 x 768)*/
 @media screen and (max-width: 1024px){
   .content {
@@ -282,6 +292,13 @@ button i {
   background-color: #282c34;
 }
 
+#home-banner {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
 .overlay-img {
   /* The image used */
   background-image: url("https://i.pinimg.com/originals/ed/d4/7e/edd47e131ce1a6475cf50c9d2e84d8f6.jpg");
@@ -298,9 +315,17 @@ button i {
   background-repeat: no-repeat;
   background-size: cover;
   
+  opacity: 0.5;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
   position: fixed;
-  opacity: 0.9;
-  z-index: -1;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-size: calc(8rem + 1vw);
 }
 
 .list-card {
@@ -355,6 +380,7 @@ button i {
 
 .home-layout {
   margin-top: 100vh;
+  gap: 5rem;
 }
 
 .library-layout {

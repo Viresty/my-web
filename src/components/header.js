@@ -39,7 +39,7 @@ class Header extends Component {
         <div className='container' id="header-container">
           <div className="content" id="header-content">
             <header className="header">
-              <img src={logo} id="App-logo" alt="logo" />
+              <a href='/'><img src={logo} id="App-logo" alt="logo" /></a>
               <div className='NavBar'>
                 <ul>
                   {NavItems}

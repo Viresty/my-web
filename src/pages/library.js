@@ -21,7 +21,7 @@ const Library = () => {
             <div className='overlay-img'></div>
         <div className='container library-layout' id="body-container">
             <div className='content'>
-                <List ListItems={list_of_test} title="Role Card" detail="Stat, abilities and skill each player will have in-game."/>
+                <List ListItems={list_of_test} title="Role Card" detail="Stat, abilities and skills each player will have in-game."/>
                 <List ListItems={list_of_test} title="Weapon Card" detail="Strong sword, steady shield, ... will support players battle with each other."/>
                 <List ListItems={list_of_test} title="Spell Card" detail="Powerful and useful spell will change the game with judicious tactic."/>
             </div>
