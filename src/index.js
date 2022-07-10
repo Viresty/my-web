@@ -4,8 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Cart from './components/cart';
-
 import { Provider } from 'react-redux';
 import Store from './store';
 
@@ -15,7 +13,9 @@ const StoreInstance = Store();
 root.render(
   <React.StrictMode>
     <Provider store={StoreInstance}>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
