@@ -13,9 +13,7 @@ const StoreInstance = Store();
 root.render(
   <React.StrictMode>
     <Provider store={StoreInstance}>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <App />
     </Provider>
   </React.StrictMode>
 );
