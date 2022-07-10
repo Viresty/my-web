@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import {useEffect} from 'react';
 
 import Home from './pages/home';
@@ -34,7 +35,7 @@ const App = () => {
   }, []);
 
   return (
-      <Router>
+      <HashRouter>
         <Header />
         <Routes>
             <Route exact path="/" element={<Home />} />
@@ -42,7 +43,7 @@ const App = () => {
             <Route path="/library" element={<Library />} />
             <Route path="/play" element={<Play />} />
         </Routes>
-      </Router>
+      </HashRouter>
   );
 }
   
