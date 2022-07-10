@@ -17,9 +17,11 @@ class List extends Component {
       });
       return (
         <div className="list-card">
-            <ul>
-                {ListItems}
-            </ul>
+          <h1 className="list-title">{this.props.title}</h1>
+          <p className="list-detail">{this.props.detail}</p>
+          <ul>
+              {ListItems}
+          </ul>
         </div>
       );
     }

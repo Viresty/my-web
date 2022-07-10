@@ -1,0 +1,46 @@
+/*Ipad ngang(1024 x 768)*/
+@media screen and (max-width: 1024px){
+    .list-card > ul > * {
+        width: 33.33333334%;
+        min-width: 15rem;
+    }
+    
+    .card {
+        width: 14rem;
+        height: 14rem;
+    }
+  }
+/*Ipad dọc(768 x 1024)*/
+@media screen and (max-width: 768px){
+    .list-card > ul > * {
+        width: 50%;
+        min-width: 14rem;
+    }
+    
+    .card {
+        width: 13rem;
+        height: 13rem;
+    }
+    
+  }
+/*Tablet nhỏ(480 x 640)*/
+@media screen and (max-width: 480px){
+    .list-card > ul > * {
+        width: 100%;
+        min-width: 15rem;
+    }
+    
+    .card {
+        width: 14rem;
+        height: 14rem;
+    }
+    
+  }
+/*Iphone(480 x 640)*/
+@media screen and (max-width: 320px){
+    
+  }
+/*Smart phone nhỏ*/
+@media screen and (max-width: 240px){
+    
+  }

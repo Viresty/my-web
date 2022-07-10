@@ -16,7 +16,6 @@ root.render(
   <React.StrictMode>
     <Provider store={StoreInstance}>
       <App />
-      <Cart />
     </Provider>
   </React.StrictMode>
 );

@@ -20,6 +20,7 @@ body {
 }
 
 .content {
+  width: 100%;
   padding: 1em;
   display: flex;
   max-width: 1320px;
@@ -36,11 +37,23 @@ body {
   .content {
     max-width: 1140px;
   }
+
+  #NavBarCollapseBtn {
+    visibility: hidden;
+  }
 }
 /*Ipad dọc(768 x 1024)*/
 @media screen and (max-width: 768px){
   .content {
     max-width: 100%;
+  }
+
+  #NavBarCollapseBtn {
+    visibility: visible !important;
+  }
+
+  .NavBar > ul {
+    display: none !important;
   }
 }
 /*Tablet nhỏ(480 x 640)*/
@@ -48,18 +61,51 @@ body {
   .content {
     max-width: 100%;
   }
+
+  #NavBarCollapseBtn {
+    visibility: visible !important;
+  }
+
+  .NavBar > ul {
+    display: none !important;
+  }
 }
 /*Iphone(480 x 640)*/
 @media screen and (max-width: 320px){
   .content {
-    max-width: 100%;
+    max-width: 320px;
+  }
+
+  #NavBarCollapseBtn {
+    visibility: visible !important;
+  }
+
+  .NavBar > ul {
+    display: none !important;
   }
 }
 /*Smart phone nhỏ*/
 @media screen and (max-width: 240px){
   .content {
-    max-width: 100%;
+    min-width: 320px;
   }
+
+  #NavBarCollapseBtn {
+    visibility: visible !important;
+  }
+
+  .NavBar > ul {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 a, a:hover {
@@ -71,22 +117,43 @@ a {
   color: white;
 }
 
-a:hover {
-  color: greenyellow;
+.actived-link {
+  color: #72e1ff !important;
+}
+
+a:hover, button:hover {
+  color: lightblue;
+  text-shadow: 0 0 1em rgba(173, 216, 230, 0.453);
+}
+
+button {
+  font-size: 1em;
+  font-weight: bolder;
+  color: white;
+  background-color: inherit;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button i {
+  margin: auto 0.5rem;
 }
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 5vmin;
+#App-logo {
+  height: 5em;
   pointer-events: none;
   margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  #App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -107,62 +174,193 @@ a:hover {
 #header-container {
   position: fixed;
   width: 100%;
-  background-color: #282c34;
   z-index: 10;
+  font-size: 1.1em;
+  flex-direction: column;
 }
 
 #header-content {
   position: relative;
   flex-direction: row;
   align-items: center;
-  height: 8em;
-  min-width: 1320px;
+  height: 6em;
 }
 
 .header {
   position: relative;
-  max-width: inherit;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: inherit;
 }
 
-.header > ul {
+.NavBar {
+  display: flex;
+  position: relative;
+  max-width: inherit;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NavBar > ul {
   display: flex;
   margin: 0;
+  padding: 0;
   align-items: center;
   justify-content: end;
   flex-direction: row;
-  list-style-type: none;
 }
 
-.header > ul li {
+.NavBar > ul li {
   font-weight: bolder;
-  margin: auto 2em;
+  padding: 0.5em 1em;
+  margin: auto 1em;
   color: white;
 }
 
-#body-container {
-  padding-top: 10em;
+#NavBar-Collapsed {
+  display: flex;
+  position: relative;
+  max-width: inherit;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+#NavBar-Collapsed > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: end;
   flex-direction: column;
 }
 
-.list-card > ul {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 1em;
-  gap: 1em;
-  list-style-type: none;
+#NavBar-Collapsed > ul li {
+  font-weight: bolder;
+  padding: 0.8em 2em;
+  margin: auto 1em;
+  color: white;
 }
 
-.list-card > ul > li {
-  width: fit-content;
+#login-button {
+  font-weight: bolder;
+  padding: 0.5em 2em;
+  margin: auto 1em;
+  color: white;
+  background-color: #0aaad6;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0.4em lightblue;
+}
+
+#login-button:hover {
+  box-shadow: 0 0 1em 0.6em lightblue;
+}
+
+#NavBarCollapseBtn {
+  visibility: hidden;
+  color: white;
+  background-color: inherit;
+  border: none;
+  margin: auto 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#NavBarCollapseBtn i {
+  font-size: 2em
+}
+
+#body-container {
+  padding-top: 5em;
+  flex-direction: column;
+  background-color: #282c34;
+}
+
+.overlay-img {
+  /* The image used */
+  background-image: url("https://i.pinimg.com/originals/ed/d4/7e/edd47e131ce1a6475cf50c9d2e84d8f6.jpg");
+
+  /* Add the blur effect */
+  filter: blur(0.3em);
+  -webkit-filter: blur(0.3em);
+
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  position: fixed;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.list-card {
+  padding: 0;
+  width: 100%;
+}
+
+.list-card > ul {
+  --gap: 1.4rem;
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  width: calc(100% + var(--gap));
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.list-card > ul > * {
+  padding: var(--gap) 0 0 var(--gap);
+  width: 25%;
+  min-width: 16rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #39404c;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 1em;
+  margin: 0 auto;
+}
+
+.card:hover {
+  box-shadow: 0 0 1em 0.5em lightblue;
 }
 
 .card img {
+  width: 75%;
+  height: 75%;
   object-fit: cover;
-  height: 100px;
-  width: 100px;
+  border-radius: 1em;
+}
+
+.card:hover img {
+  object-fit: cover;
+  width: 80%;
+  height: 80%;
+}
+
+.home-layout {
+  margin-top: 100vh;
+}
+
+.library-layout {
+  margin-top: 50vh;
+}
+
+.banner {
+  width: 100%;
 }

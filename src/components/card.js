@@ -9,11 +9,9 @@ class Card extends Component {
 
     render() {
       return (
-        <div className="card">
-            <a href="/">
-              <img src= {this.props.CardDetail.url} alt={this.props.CardDetail.alt}></img>
-            </a>
-        </div>
+          <a href="/" className="card">
+            <img src= {this.props.CardDetail.url} alt={this.props.CardDetail.alt}></img>
+          </a>
       );
     }
   }
